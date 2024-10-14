@@ -6,22 +6,33 @@ using System.Threading.Tasks;
 
 namespace AW23_PRRPRR01_09_Endimensionella {
 	internal class Program {
-		static void CumulativeExample() {
-			int sum = 0;
-			for (int i = 1; i <= 10; i++) {
-				//if (i % 2 == 0) {
-				//	sum += i * i;
-				//} else {
-				//	sum -= i * i;
-				//}
+		static void ArrayAlgorithmExample() {
+			Random rng = new Random();
 
-				sum += i * i * (int)Math.Pow(-1, i);
+			int[] myNumbers = new int[11];
+			for (int i = 0; i < myNumbers.Length; i++) {
+				myNumbers[i] = rng.Next(10);
 			}
-			Console.WriteLine(sum);
+
+			for (int i = 0; i < myNumbers.Length; i++) {
+				// myNumbers[i] -= 10;
+				Console.WriteLine(myNumbers[i]);
+			}
+
+			Console.WriteLine("===========");
+
+			for (int i = 0; i < myNumbers.Length - 1; i += 2) {
+				int firstNumber = myNumbers[i];
+				int secondNumber = myNumbers[i + 1];
+
+				Console.WriteLine(secondNumber - firstNumber);
+			}
+
+
 		}
 
 		static void Main(string[] args) {
-			CumulativeExample();
+			ArrayAlgorithmExample();
 		}
 	}
 }
